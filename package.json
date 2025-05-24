@@ -7,14 +7,25 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@nuxtjs/storybook": "^8.3.5",
     "@tailwindcss/vite": "^4.1.7",
     "nuxt": "^3.17.4",
     "tailwindcss": "^4.1.7",
     "tone": "^15.1.22",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@storybook/vue3": "^8.6.12",
+    "storybook": "^8.6.12"
   }
 }
