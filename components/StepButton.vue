@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { Color } from '@/types/Colors'
+import { useDrumSequencer } from '@/stores/DrumSequencer'
+import {storeToRefs} from "pinia";
 
-interface Props {
-  color: Color
-}
-
-const { color } = defineProps<Props>()
+const drumSequencerStore = useDrumSequencer()
+const { setting } = storeToRefs(drumSequencerStore)
 
 interface Emits {
   (e: 'toggled', value: boolean): void
@@ -18,8 +16,8 @@ const active = defineModel<boolean>({
 })
 
 const buttonColor = computed(() => [
-  active.value ? `bg-${color}-500` : 'bg-gray-500',
-  active.value ? `border-${color}-400` : 'border-gray-400'
+  active.value ? `bg-${setting.value.color}-500` : 'bg-slate-500',
+  active.value ? `border-${setting.value.color}-400` : 'border-slate-400'
 ])
 
 const onClick = async () => {

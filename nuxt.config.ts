@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
       '@nuxtjs/storybook',
-      '@nuxtjs/tailwindcss'
+      '@nuxtjs/tailwindcss',
+      '@pinia/nuxt'
   ],
 })

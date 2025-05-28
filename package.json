@@ -13,18 +13,20 @@
   },
   "dependencies": {
     "@nuxtjs/storybook": "^8.3.5",
+    "@pinia/nuxt": "^0.11.0",
     "nuxt": "^3.17.4",
+    "pinia": "^3.0.2",
     "tone": "^15.1.22",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@storybook/vue3": "^8.6.12",
-    "storybook": "^8.6.12",
-    "@nuxtjs/tailwindcss": "^6.14.0"
+    "storybook": "^8.6.12"
   }
 }

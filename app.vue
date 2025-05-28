@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import * as Tone from 'tone'
+import StepButton from "~/components/StepButton.vue";
 
 
 let synth: Tone.Synth | Tone.AMSynth | Tone.FMSynth | Tone.DuoSynth | Tone.MonoSynth | Tone.MembraneSynth | Tone.MetalSynth | Tone.PluckSynth | Tone.PolySynth
@@ -32,6 +33,7 @@ const play = async () => {
   synth.triggerAttackRelease('E6', '8n', now + 2.4)
   synth.triggerAttackRelease('E5', '8n', now + 2.8)
 }
+const b = ref(true)
 </script>
 
 <template>
@@ -43,4 +45,11 @@ const play = async () => {
   >
     play!
   </button>
+  <StepButton
+      color="indigo"
+      v-model="b"
+      @toggled="(re) => {
+        console.log(`toggled to ${re}`)
+      }"
+  />
 </template>
