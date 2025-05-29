@@ -1,4 +1,4 @@
-import type { Color } from '@/types/Colors'
+import type { Color } from '~/types/Color'
 
 const colors: Color[] = [
     'red', 'orange', 'amber', 'yellow', 'lime',

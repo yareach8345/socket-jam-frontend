@@ -8,7 +8,8 @@ export const useDrumSequencer = defineStore('drum-sequencer', () => {
         timeSignature: {
             numerator: 4,
             denominator: 4
-        }
+        },
+        triplet: false
     })
 
     return {
