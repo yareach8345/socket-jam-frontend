@@ -6,3 +6,5 @@ const colors: Color[] = [
     'blue', 'indigo', 'violet', 'purple', 'fuchsia',
     'pink', 'rose'
 ]
+
+export default colors

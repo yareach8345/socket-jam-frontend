@@ -1,11 +1,40 @@
 import StepButton from './StepButton.vue'
 import type {Meta, StoryObj} from "@storybook/vue3";
+import { createPinia, setActivePinia } from "pinia";
+import { h, provide } from 'vue'
+import { useDrumSequencer } from '@/stores/DrumSequencer'
+import colors from '@/constants/Colors'
 
 const meta = {
     title: 'Sequencer/StepButton',
     component: StepButton,
     tags: ['autodocs'],
-} satisfies Meta<typeof StepButton>
+    argTypes: {
+        color: {
+            control: { type: "select" },
+            options: colors
+        }
+    },
+    decorators: [
+        (story, context) => ({
+            setup() {
+                const pinia = createPinia()
+                setActivePinia(pinia)
+                provide('pinia', pinia)
+
+                const store = useDrumSequencer()
+
+                watch(
+                    () => context.args.color,
+                    (newColor) => { store.setting.color = newColor || 'indigo' },
+                    { immediate: true }
+                )
+
+                return () => h(story())
+            }
+        })
+    ]
+} satisfies Meta
 
 export default meta
 type Story = StoryObj<typeof meta>
