@@ -1,3 +1,7 @@
 <template>
-  <div class="text-primary font-bold underline">Hello, Tailwind CSS</div>
+  <nuxt-layout>
+    <nuxt-page/>
+  </nuxt-layout>
 </template>
+<script setup lang="ts">
+</script>
