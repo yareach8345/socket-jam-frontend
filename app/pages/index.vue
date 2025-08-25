@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { fromEvent } from 'rxjs'
-
 const userName = ref('')
 const roomNumber = ref('')
 
@@ -10,7 +8,7 @@ const joinRoom = () => {
 </script>
 
 <template>
-  <div class="p-4 flex flex-col justify-center items-center gap-3">
+  <div class="flex flex-col justify-center items-center gap-3">
     <div>
       <h2 class="font-bold text-2xl">Welcome</h2>
       <p class="text-lg">Please enter your <b>username</b> and <b>room number</b></p>
@@ -38,7 +36,12 @@ const joinRoom = () => {
             v-model="roomNumber"
         />
       </label>
-      <button class="bg-blue-500 hover:bg-blue-700 transition-colors text-white py-1 px-2 rounded-md">Join</button>
+      <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 transition-colors text-white py-1 px-2 rounded-md"
+      >
+        Join
+      </button>
     </form>
   </div>
 </template>
